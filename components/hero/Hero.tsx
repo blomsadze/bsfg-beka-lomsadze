@@ -41,7 +41,7 @@ const Hero = () => {
           {smallImages.map((image, index) => (
             <div
               key={index}
-              className="lg:max-w-[185px] rounded-[5px] lg:h-[120px] w-full h-auto"
+              className="aspect-square lg:aspect-auto w-full rounded-[3px] lg:rounded-[5px] overflow-hidden"
             >
               <Image
                 src={image}

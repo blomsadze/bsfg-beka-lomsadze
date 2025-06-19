@@ -8,7 +8,7 @@ import DepositIcon from "@/public/icons/deposit.svg";
 
 const Header = () => {
   return (
-    <header className="bg-[#152535] h-[3.75rem]">
+    <header className="bg-[#152535] lg:pl-[60px] xl:pl-0 h-[3.75rem]">
       <div className="max-width flex h-full justify-between items-center">
         <div className="bg-[#253241] rounded-[5px] lg:w-[75px] lg:h-[40px] w-[60px] h-[32px]" />
         <div className="flex items-center lg:gap-[10px] gap-5">
