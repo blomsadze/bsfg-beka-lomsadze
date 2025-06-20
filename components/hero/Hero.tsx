@@ -29,7 +29,7 @@ const Hero = () => {
           <Image
             src={Image3}
             alt="Image-3"
-            className="lg:w-[400px] lg:h-[250px] h-auto"
+            className="lg:w-[4f00px] lg:h-[250px] h-auto"
           />
           <Image
             src={Image4}
