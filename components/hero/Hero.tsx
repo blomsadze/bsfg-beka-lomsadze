@@ -23,8 +23,15 @@ const Hero = () => {
           className="hidden lg:block w-full h-auto"
         />
       </div>
+      <div className="w-full flex pt-[5px] pb-[10px] lg:py-[10px] justify-center items-center gap-[5px]">
+        <div className="border-[#0F70DC] border-1 w-[15px] h-[5px] rounded-[5px]" />
+        <div className="border-[#0F70DC] border-1 w-[15px] h-[5px] rounded-[5px]" />
+        <div className="border-[#0F70DC] border-1 w-[15px] h-[5px] bg-[#0F70DC] rounded-[5px]" />
+        <div className="border-[#0F70DC] border-1 w-[15px] h-[5px] rounded-[5px]" />
+        <div className="border-[#0F70DC] border-1 w-[15px] h-[5px] rounded-[5px]" />
+      </div>
 
-      <div className="flex flex-col lg:flex-row gap-[10px] lg:mt-[25px] mt-[20px]">
+      <div className="flex flex-col lg:flex-row gap-[10px]">
         <div className="grid grid-cols-2 lg:gap-[10px] gap-[5px]">
           <Image
             src={Image3}

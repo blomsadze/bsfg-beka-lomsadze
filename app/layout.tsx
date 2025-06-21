@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import Header from "@/components/layout/header/Header";
 import Aside from "@/components/layout/aside/Aside";
 import BottomTabs from "@/components/layout/bottomTabs/BottomTabs";
-import { Analytics } from "@vercel/analytics/next";
+import Footer from "@/components/layout/footer/Footer";
 
 import "./globals.css";
-import Footer from "@/components/layout/footer/Footer";
 
 const poppins = Poppins({
   variable: "--font-poppins",

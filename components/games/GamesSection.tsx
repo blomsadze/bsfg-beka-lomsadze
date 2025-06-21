@@ -20,7 +20,7 @@ interface GameSectionProps {
   };
 }
 
-const CategoryGamesSection = ({
+const GamesSection = ({
   item: { title, category, games, categoryIcon, pagination },
 }: GameSectionProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -57,4 +57,4 @@ const CategoryGamesSection = ({
   );
 };
 
-export default CategoryGamesSection;
+export default GamesSection;

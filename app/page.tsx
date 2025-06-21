@@ -1,7 +1,7 @@
 import Hero from "@/components/hero/Hero";
-import CategoryGamesSection from "@/components/games/CategoryGamesSection";
-
+import GamesSection from "@/components/games/GamesSection";
 import GamesFilter from "@/components/games/GamesFilter";
+import BottomSection from "@/components/bottomSection/BottomSection";
 
 import { getCategorySections } from "@/utils/getCategorySections";
 import { fetchGames } from "@/actions/gameAction";
@@ -56,7 +56,7 @@ export default async function Home({
           <GamesFilter />
         </div>
         {isFilteringOrSearching ? (
-          <CategoryGamesSection
+          <GamesSection
             item={{
               games,
               pagination: data?.pagination,
@@ -64,9 +64,10 @@ export default async function Home({
           />
         ) : (
           categorySections.map((section) => (
-            <CategoryGamesSection key={section.category} item={section} />
+            <GamesSection key={section.category} item={section} />
           ))
         )}
+        <BottomSection />
       </div>
     </main>
   );

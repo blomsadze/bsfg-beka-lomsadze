@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Select from "../select/Select";
+import Select from "../ui/select/Select";
 
 import CollectionsIcon from "@/public/icons/collections.svg";
 import ProvidersIcon from "@/public/icons/providers.svg";

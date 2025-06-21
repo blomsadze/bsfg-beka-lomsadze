@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Search from "../search/Search";
-import CategoriesNavigation from "./CategoriesNavigation";
+import CategoriesNavigation from "../categoriesNavigation/CategoriesNavigation";
 import GameSelectors from "./GameSelectors";
 
 const GamesFilter = () => {

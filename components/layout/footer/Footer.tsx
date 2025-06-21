@@ -59,13 +59,13 @@ const Footer = () => {
         </div>
 
         <div className="text-center text-sm text-[#66788C] border-t-[1.5px] pt-5 border-[#282F48]">
-          <div className="flex items-center justify-center lg:justify-between mb-[25px]">
+          <div className="flex items-center flex-col-reverse lg:flex-row justify-center lg:justify-between mb-[25px]">
             <div className="hidden lg:block lg:w-[170px]" />
             <p className="text-center text-xs lg:text-sm">
               © 2025 <span className="text-white font-bold">CASINO.COM</span>.
               All Rights Reserved.
             </p>
-            <ul className="lg:flex hidden items-center gap-[10px]">
+            <ul className="flex pb-[25px] lg:pb-0 mb-[25px] lg:mb-0 lg:w-fit w-full lg:border-none justify-center border-b-[1.5px] border-[#282F48] items-center gap-[10px]">
               {additionalIcons.map((icon) => (
                 <li key={icon.id}>
                   <Image
