@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import classNames from "classnames";
@@ -39,7 +39,11 @@ const CategoriesNavigation = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const selectedCategories = searchParams.get("category") || "all";
+  const selectedCategories = searchParams.get("category")?.split(",") || [
+    "all",
+  ];
+  const [localCategory, setLocalCategory] =
+    useState<string[]>(selectedCategories);
 
   const categoriesList = [
     {
@@ -52,6 +56,16 @@ const CategoriesNavigation = () => {
   ];
 
   const handleSelectCategory = (value: string) => {
+    let updated;
+    if (value === "all") {
+      updated = ["all"];
+    } else {
+      updated = localCategory.includes(value)
+        ? localCategory.filter((item) => item !== value)
+        : [...localCategory.filter((val) => val !== "all"), value];
+    }
+
+    setLocalCategory(updated);
     const newParams = new URLSearchParams(searchParams.toString());
     const updatedQuery = updateQueryParam("category", value, newParams);
     router.replace(`?${updatedQuery}`, { scroll: false });
@@ -60,7 +74,7 @@ const CategoriesNavigation = () => {
   return (
     <ul className="flex flex-row items-center gap-[10px] overflow-x-auto flex-nowrap w-full">
       {categoriesList.map((item) => {
-        const isSelected = selectedCategories.includes(item.value);
+        const isSelected = localCategory.includes(item.value);
 
         return (
           <CategoryItem

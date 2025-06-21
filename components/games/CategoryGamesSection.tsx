@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
+import classNames from "classnames";
 
 import GameNavigation from "./GameNavigation";
 import GameItem from "./GameItem";
@@ -11,11 +12,11 @@ import { IPagination } from "@/types/RequestTypes";
 
 interface GameSectionProps {
   item: {
-    title: string;
-    category: (typeof CategoryEnum)[keyof typeof CategoryEnum];
+    title?: string;
+    category?: (typeof CategoryEnum)[keyof typeof CategoryEnum];
     games: IGame[];
     pagination: IPagination;
-    categoryIcon: string;
+    categoryIcon?: string;
   };
 }
 
@@ -26,11 +27,18 @@ const CategoryGamesSection = ({
 
   return (
     <div className="mb-[25px] overflow-hidden">
-      <div className="mb-[10px] lg:mb-4 flex items-center justify-between">
-        <div className="flex items-center gap-[10px]">
-          <Image src={categoryIcon} alt={title} width={20} height={20} />
-          <p className="text-[12px] lg:text-base font-medium">{title}</p>
-        </div>
+      <div
+        className={classNames("mb-[10px] lg:mb-4 flex items-center", {
+          "justify-between": title,
+          "justify-end": !title,
+        })}
+      >
+        {title && categoryIcon && (
+          <div className="flex items-center gap-[10px]">
+            <Image src={categoryIcon} alt={title} width={20} height={20} />
+            <p className="text-[12px] lg:text-base font-medium">{title}</p>
+          </div>
+        )}
         <GameNavigation
           category={category}
           pagination={pagination}

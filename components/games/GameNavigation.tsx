@@ -15,7 +15,7 @@ const NavigationButton = ({
 }: {
   isNext?: boolean;
   onClick: () => void;
-  disabled: boolean;
+  disabled?: boolean;
 }) => {
   return (
     <button
@@ -45,7 +45,7 @@ const GameNavigation = ({
   pagination,
   containerRef,
 }: {
-  category: (typeof CategoryEnum)[keyof typeof CategoryEnum];
+  category?: (typeof CategoryEnum)[keyof typeof CategoryEnum];
   pagination: IPagination;
   containerRef: React.RefObject<HTMLDivElement | null>;
 }) => {
@@ -54,8 +54,7 @@ const GameNavigation = ({
 
   const updatePage = (page: number) => {
     const current = new URLSearchParams(Array.from(params.entries()));
-    current.set(`${category}-page`, page.toString());
-    // router.push(`?${current.toString()}`);
+    current.set(category ? `${category}-page` : "page", page.toString());
     router.replace(`?${current.toString()}`, { scroll: false });
   };
 
@@ -63,26 +62,28 @@ const GameNavigation = ({
     const container = containerRef.current;
     if (!container) return;
 
-    const scrollAmount = container.offsetWidth;
+    const scrollAmount = 320;
+
+    const scrollBy = isNext ? scrollAmount : -scrollAmount;
 
     container.scrollBy({
-      left: isNext ? scrollAmount : -scrollAmount,
+      left: scrollBy,
       behavior: "smooth",
     });
 
-    const currentScroll =
-      container.scrollLeft + (isNext ? scrollAmount : -scrollAmount);
+    const currentScroll = container.scrollLeft + scrollBy;
     const maxScroll = container.scrollWidth - container.clientWidth;
-
+    const nearEnd = currentScroll >= maxScroll;
     const nearStart = currentScroll <= 0;
-    const nearEnd = currentScroll + 10 >= maxScroll;
-
-    if (!isNext && nearStart && pagination?.prev_page !== null) {
-      updatePage(pagination.prev_page);
-    }
 
     if (isNext && nearEnd && pagination?.next_page !== null) {
       updatePage(pagination.next_page);
+      container.scrollLeft = 0;
+    }
+
+    if (!isNext && nearStart && pagination?.prev_page !== null) {
+      updatePage(pagination.prev_page);
+      container.scrollLeft = 0;
     }
   };
 
@@ -90,11 +91,11 @@ const GameNavigation = ({
     <div className="flex items-center justify-center lg:gap-[5px] gap-[3px]">
       <NavigationButton
         onClick={() => scrollContainer(false)}
-        disabled={!pagination?.has_prev_page}
+        // disabled={!pagination?.has_prev_page}
       />
       <NavigationButton
         onClick={() => scrollContainer(true)}
-        disabled={!pagination?.has_next_page}
+        // disabled={!pagination?.has_next_page}
         isNext
       />
     </div>

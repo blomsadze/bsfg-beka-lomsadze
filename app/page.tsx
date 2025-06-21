@@ -56,11 +56,12 @@ export default async function Home({
           <GamesFilter />
         </div>
         {isFilteringOrSearching ? (
-          <ul>
-            {games.map((game) => (
-              <li key={game.id}>{game.name}</li>
-            ))}
-          </ul>
+          <CategoryGamesSection
+            item={{
+              games,
+              pagination: data?.pagination,
+            }}
+          />
         ) : (
           categorySections.map((section) => (
             <CategoryGamesSection key={section.category} item={section} />
