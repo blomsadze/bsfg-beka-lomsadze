@@ -1,4 +1,4 @@
-import { CATEGORIES } from "./categories";
+import { categories } from "./categories";
 
 export interface IAsideItem {
   id: string | number;
@@ -9,7 +9,6 @@ export interface IAsideItem {
 export interface IAsideSection {
   section: string;
   items: IAsideItem[];
-  isCategories?: boolean;
 }
 
 export const asideItems: IAsideSection[] = [
@@ -35,8 +34,7 @@ export const asideItems: IAsideSection[] = [
   },
   {
     section: "Games",
-    items: [...CATEGORIES],
-    isCategories: true,
+    items: [...categories].slice(0, 8),
   },
   {
     section: "Library",

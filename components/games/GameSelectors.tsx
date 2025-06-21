@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Search from "../search/Search";
 import Select from "../select/Select";
 
 import CollectionsIcon from "@/public/icons/collections.svg";
@@ -13,7 +12,7 @@ import {
   updateQueryParam,
 } from "@/utils/filterUtils";
 
-const Filter = () => {
+const GameSelectors = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -27,8 +26,7 @@ const Filter = () => {
   };
 
   return (
-    <div className="flex row items-center gap-[10px]">
-      <Search />
+    <>
       <Select
         label="Collections"
         icon={CollectionsIcon}
@@ -43,8 +41,8 @@ const Filter = () => {
         onChange={(value) => handleSelectChange("providers", value)}
         value={providers}
       />
-    </div>
+    </>
   );
 };
 
-export default Filter;
+export default GameSelectors;

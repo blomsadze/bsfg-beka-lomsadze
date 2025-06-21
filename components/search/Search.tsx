@@ -1,6 +1,7 @@
+"use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 import Search2Icon from "@/public/icons/search-2.svg";
 

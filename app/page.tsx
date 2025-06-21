@@ -1,7 +1,7 @@
 import Hero from "@/components/hero/Hero";
 import CategoryGamesSection from "@/components/games/CategoryGamesSection";
 
-import Filter from "@/components/filter/Filter";
+import GamesFilter from "@/components/games/GamesFilter";
 
 import { getCategorySections } from "@/utils/getCategorySections";
 import { fetchGames } from "@/actions/gameAction";
@@ -12,7 +12,7 @@ export default async function Home({
   searchParams: Promise<{
     providers?: string;
     collections?: string;
-    categories?: string;
+    category?: string;
     search?: string;
     page?: string;
   }>;
@@ -22,7 +22,7 @@ export default async function Home({
   const filters = {
     providers: resolvedParams.providers?.split(",") || [],
     collections: resolvedParams.collections?.split(",") || [],
-    categories: resolvedParams.categories?.split(",") || [],
+    category: resolvedParams.category?.split(",") || [],
     search: resolvedParams.search || "",
     page: Number(resolvedParams.page) || 1,
   };
@@ -31,7 +31,7 @@ export default async function Home({
     filters.search.length >= 3 ||
     filters.providers.length > 0 ||
     filters.collections.length > 0 ||
-    filters.categories.length > 0 ||
+    filters.category.length > 0 ||
     filters.page > 1;
 
   const data = await fetchGames(filters);
@@ -53,7 +53,7 @@ export default async function Home({
       <div className="max-width">
         <Hero />
         <div className="flex mt-[15px] flex-col gap-[15px] mb-[25px]">
-          <Filter />
+          <GamesFilter />
         </div>
         {isFilteringOrSearching ? (
           <ul>

@@ -44,11 +44,11 @@ const Select = ({ label, icon, options, value, onChange }: TSelectProps) => {
       <div className="flex w-full items-center justify-between">
         <div className="flex items-center gap-[5px]">
           <Image src={icon} width={16} height={16} alt={label} />
-          <span className="font-semibold text-sm">{label}</span>
+          <span className="font-semibold text-xs lg:text-sm">{label}</span>
         </div>
         <div
           className={classNames(
-            "lg:w-[24px] lg:h-[24px] w-[24px] h-[28px] p-[7px] border-[1px] border-[#253241] flex items-center justify-center  rounded-[5px] bg-[#1C2E3D]"
+            "h-[24px] w-[24px] p-[7px] border-[1px] border-[#253241] flex items-center justify-center  rounded-[5px] bg-[#1C2E3D]"
           )}
         >
           <Image
