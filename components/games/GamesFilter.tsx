@@ -14,7 +14,7 @@ const GamesFilter = () => {
         </div>
       </div>
       <CategoriesNavigation />
-      <div className="lg:hidden items-center grid grid-cols-2 min-w-[380px] gap-[5px]">
+      <div className="lg:hidden items-center grid grid-cols-2 gap-[5px]">
         <GameSelectors />
       </div>
     </div>

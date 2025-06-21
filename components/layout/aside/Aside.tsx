@@ -16,7 +16,7 @@ const Aside = () => {
   return (
     <aside
       className={classNames(
-        "lg:fixed py-[11px] transition-all duration-300 lg:flex flex-col justify-start hidden h-full border-[#273344] border-r-1 fixed bg-[#162231]",
+        "lg:fixed py-[11px] z-[99] transition-all duration-300 lg:flex flex-col justify-start hidden h-full border-[#273344] border-r-1 fixed bg-[#162231]",
         {
           "w-[200px]": expanded,
           "w-[60px]": !expanded,
