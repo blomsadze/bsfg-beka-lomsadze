@@ -7,6 +7,7 @@ import BottomTabs from "@/components/layout/bottomTabs/BottomTabs";
 import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
+import Footer from "@/components/layout/footer/Footer";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -29,7 +30,8 @@ export default function RootLayout({
       <body className={`${poppins.variable} antialiased`}>
         <Aside />
         <Header />
-        <div className="pb-20 lg:pb-0">{children}</div>
+        <div className="min-h-screen lg:pb-0">{children}</div>
+        <Footer />
         <BottomTabs />
         <Analytics />
       </body>

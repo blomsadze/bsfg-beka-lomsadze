@@ -5,12 +5,13 @@ import RingIcon from "@/public/icons/ring.svg";
 import UserIcon from "@/public/icons/user.svg";
 import UsdIcon from "@/public/icons/usd.svg";
 import DepositIcon from "@/public/icons/deposit.svg";
+import Logo from "@/components/Logo";
 
 const Header = () => {
   return (
     <header className="bg-[#152535] lg:pl-[60px] xl:pl-0 h-[3.75rem]">
       <div className="max-width flex h-full justify-between items-center">
-        <div className="bg-[#253241] rounded-[5px] lg:w-[75px] lg:h-[40px] w-[60px] h-[32px]" />
+        <Logo />
         <div className="flex items-center lg:gap-[10px] gap-5">
           <div className="lg:border-[#273344] bg-[#10202D] border-[#192C40] p-2 pr-0 rounded-[5px] overflow-hidden h-[40px] border-1">
             <div className="flex items-center justify-between gap-[10px] h-full">
