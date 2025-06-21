@@ -65,15 +65,15 @@ const Footer = () => {
               © 2025 <span className="text-white font-bold">CASINO.COM</span>.
               All Rights Reserved.
             </p>
-            <ul className="flex pb-[25px] lg:pb-0 mb-[25px] lg:mb-0 lg:w-fit w-full lg:border-none justify-center border-b-[1.5px] border-[#282F48] items-center gap-[10px]">
-              {additionalIcons.map((icon) => (
-                <li key={icon.id}>
+            <ul className="flex pb-[25px] lg:pb-0 mb-[25px] lg:mb-0 lg:border-none justify-center border-b-[1.5px] border-[#282F48] items-center gap-[10px]">
+              {additionalIcons.map((icon, index) => (
+                <li key={(icon.id, index)} className="w-[35px] h-[35px]">
                   <Image
                     src={icon.src}
                     alt={`footer-icon-${icon.id}`}
                     width={35}
                     height={35}
-                    className="inline-block"
+                    className="object-contain w-full h-full"
                   />
                 </li>
               ))}

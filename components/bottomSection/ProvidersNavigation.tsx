@@ -8,9 +8,10 @@ const ProvidersNavigation = () => {
   return (
     <div>
       <div className="flex items-center justify-between lg:mb-[15px] mb-[10px]">
-        <div className="flex items-center gap-3">
+        <div className="flex w-[22px] h-[22px] items-center gap-3">
           <Image
             src="/icons/providers-navigation.svg"
+            className="object-contain w-full h-full"
             width={16}
             height={16}
             alt="providers nav icon"
@@ -30,10 +31,10 @@ const ProvidersNavigation = () => {
           >
             <Image
               src={provider.src}
-              className="w-full h-full object-cover"
-              alt={`Provider ${provider.id}`}
-              width={150}
-              height={60}
+              alt={`Provider-${provider.id}`}
+              width={115}
+              height={50}
+              className="object-contain w-full h-full"
             />
           </li>
         ))}

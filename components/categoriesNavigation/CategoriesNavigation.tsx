@@ -21,7 +21,7 @@ const CategoryItem = ({
   return (
     <li
       className={classNames(
-        "flex items-center gap-2 border-1 min-w-fit cursor-pointer rounded-[5px] p-3 h-[40px]",
+        "flex items-center gap-2 border-1 cursor-pointer rounded-[5px] p-3 h-[40px]",
         {
           "bg-[#223444] border-[#273847] text-[#C1C9E5]": !selected,
           "bg-[#10202D] border-transparent text-white": selected,
@@ -29,7 +29,15 @@ const CategoryItem = ({
       )}
       onClick={onClick}
     >
-      <Image src={icon} alt="Category Icon" width={20} height={20} />
+      <div className="w-4 h-4">
+        <Image
+          src={icon}
+          className="object-contain w-auto h-auto"
+          alt="Category Icon"
+          width={20}
+          height={20}
+        />
+      </div>
       <span className="text-sm text-nowrap font-medium">{name}</span>
     </li>
   );

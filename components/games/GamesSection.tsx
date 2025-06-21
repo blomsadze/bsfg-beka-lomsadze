@@ -35,7 +35,15 @@ const GamesSection = ({
       >
         {title && categoryIcon && (
           <div className="flex items-center gap-[10px]">
-            <Image src={categoryIcon} alt={title} width={20} height={20} />
+            <div className="w-5 h-5">
+              <Image
+                src={categoryIcon}
+                alt={title}
+                width={20}
+                height={20}
+                className="object-contain w-full h-full"
+              />
+            </div>
             <p className="text-[12px] lg:text-base font-medium">{title}</p>
           </div>
         )}

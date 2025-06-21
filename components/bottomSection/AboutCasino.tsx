@@ -36,7 +36,7 @@ const AboutCasino = () => {
         keeps players coming back.
       </p>
       <div>
-        <Button className="lg:w-[250px] lg:absolute lg:bottom-0 lg:mb-[20px] mt-4 lg:mt-0 lg:left-1/2 lg:-translate-x-1/2 w-[95%]">
+        <Button className="lg:w-[250px] lg:absolute lg:bottom-0 lg:mb-[20px] mt-4 lg:mt-0 lg:left-1/2 lg:-translate-x-1/2 w-full">
           <span className="uppercase font-semibold">read more</span>
         </Button>
       </div>

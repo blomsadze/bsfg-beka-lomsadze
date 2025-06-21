@@ -37,10 +37,18 @@ const Header = () => {
           </div>
           <div className="flex items-center gap-[5px]">
             <div className="w-[40px] h-[40px] bg-[#1C2E3D] p-[10px] flex items-center rounded-[5px] border-1 border-[#273344]">
-              <Image src={RingIcon} alt="Ring Icon" className="w-full h-full" />
+              <Image
+                src={RingIcon}
+                alt="Ring Icon"
+                className="w-auto object-contain h-auto"
+              />
             </div>
             <div className="w-[40px] h-[40px] bg-[#1C2E3D] p-[10px] flex items-center rounded-[5px] border-1 border-[#273344]">
-              <Image src={UserIcon} alt="Ring Icon" className="w-full h-full" />
+              <Image
+                src={UserIcon}
+                alt="Ring Icon"
+                className="w-auto object-contain h-auto"
+              />
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ const BuyNowSection = () => {
       <h2 className="font-bold text-[20px] lg:text-nowrap text-center lg:text-left">
         You don’t have Crypto? <br /> No problem.
       </h2>
-      <ul className="flex  flex-wrap lg:flex-nowrap items-center lg:gap-[15px] justify-center">
+      <ul className="flex flex-wrap lg:flex-nowrap items-center lg:gap-[15px] justify-center">
         {buyNowItems.map((item) => (
           <li key={item.id}>
             <Image
@@ -19,7 +19,6 @@ const BuyNowSection = () => {
               alt={`Buy Now Item ${item.id}`}
               width={80}
               height={55}
-              className="w-[80px] h-[55px]"
             />
           </li>
         ))}
