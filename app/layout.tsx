@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import Header from "@/components/layout/header/Header";
 import Aside from "@/components/layout/aside/Aside";
 import BottomTabs from "@/components/layout/bottomTabs/BottomTabs";
+import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Header />
         <div className="pb-20 lg:pb-0">{children}</div>
         <BottomTabs />
+        <Analytics />
       </body>
     </html>
   );
