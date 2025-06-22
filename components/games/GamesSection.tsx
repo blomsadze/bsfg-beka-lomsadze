@@ -47,19 +47,25 @@ const GamesSection = ({
             <p className="text-[12px] lg:text-base font-medium">{title}</p>
           </div>
         )}
-        <GameNavigation
-          category={category}
-          pagination={pagination}
-          containerRef={containerRef}
-        />
+        {games?.length > 0 && (
+          <GameNavigation
+            category={category}
+            pagination={pagination}
+            containerRef={containerRef}
+          />
+        )}
       </div>
       <div
         ref={containerRef}
         className="flex h-[150px] w-full lg:h-[200px] flex-row gap-[15px] overflow-x-auto"
       >
-        {games.map((game) => (
-          <GameItem key={game.id} item={game} />
-        ))}
+        {games?.length > 0 ? (
+          games.map((game) => <GameItem key={game.id} item={game} />)
+        ) : (
+          <div className="flex items-center justify-center w-full h-full">
+            <p className="text-white font-medium text-lg">No Results</p>
+          </div>
+        )}
       </div>
     </div>
   );
