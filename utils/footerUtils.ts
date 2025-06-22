@@ -92,6 +92,10 @@ export const cryptoItems = [
   },
   {
     id: 12,
+    src: "/icons/footer/additional.svg",
+  },
+  {
+    id: 13,
     src: "/icons/footer/discover.svg",
   },
 ];
